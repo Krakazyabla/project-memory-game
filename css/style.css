@@ -1,0 +1,123 @@
+ /************   Resetting default styles   **************/
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ line-height: 1.2em;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+/************   Common styles   **************/
+
+body {
+  height: 100%;
+  background: url(../img/background_w1920.jpg) no-repeat center /cover;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 20px;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.heading {
+  font-size: 4em;
+  margin: 10px;
+  color: #ffe28c;
+  text-shadow: 0 0 10px black;
+}
+
+.reminder {
+  margin: 10px;
+  align-self: center;
+}
+
+/************   Board   **************/
+
+.board-wrapper {
+  position: relative;
+  width: 60%;
+  padding-bottom: 60%;
+}
+
+.board {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-flow: row wrap;
+  -ms-align-items: stretch;
+  align-items: stretch;
+}
+
+.card {
+  width: 25%;
+  padding: 5px;
+  position: relative;
+}
+
+.card .front {
+  background: url(../img/front.svg) beige center no-repeat /contain;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  right: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px black;
+}
+
+.card .back {
+  display: none;
+}
+
+/************   Info & controls   **************/
+
+.info {
+  margin-left: 10%;
+  font-size: 2em;
+}
+
+.stars {
+  margin: 50px 10px 20px 10px;
+  color: #ffe28c;
+}
+
+.moves {
+  margin: 20px 10px;
+  font-weight: bold;
+}
+
+button#reset {
+  font-size: 1em;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  border-radius: 7px;
+  background: linear-gradient(beige, #e8e8b9);
+  border: 1px solid #e8e8b9;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+button#reset:hover {
+  box-shadow: 0 0 10px black;
+}
+
+.cat {
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+  width: 250px;
+  height: 235px;
+  background: url(../img/cat_3.png) no-repeat center /contain;
+}
