@@ -60,6 +60,29 @@ body {
   align-items: stretch;
 }
 
+.invite-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.invite-message {
+  width: 75%;
+  padding: 10px;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  color: beige;
+}
+
 .card {
   width: 25%;
   padding: 5px;
@@ -142,14 +165,17 @@ body {
   font-size: 2em;
 }
 
-.stars {
-  margin: 50px 10px 20px 10px;
-  color: #ffe28c;
-}
-
-.moves {
+.rating, .moves, .timer {
   margin: 20px 10px;
   font-weight: bold;
+}
+
+.rating {
+  margin-top: 40px;
+}
+
+.rating .fa-star {
+  color: #ffe28c;
 }
 
 button#reset {

@@ -14,18 +14,35 @@
     <h1 class="heading">Memory game</h1>
     <h3 class="reminder">(don't forget to feed the cat!)</h3>
     <div class="board-wrapper">
+      <div class="invite-wrapper">
+        <p class="invite-message">
+          Find matching cards and feed your cat as soon as possible!
+        </p>
+        <p class="invite-message">
+          Press New game to begin
+        </p>
+
+      </div>
       <div class="board"></div>
     </div>
     <div class="info">
       <div class="reset">
         <button id="reset">New game</button>
       </div>
-      <div class="stars">
+      <p class="rating">
+        Rating:
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
-      </div>
-      <p class="moves">Moves: <span id="moves">0</span></p>
+      </p>
+      <p class="moves">
+        Moves:
+        <span id="moves">0</span>
+      </p>
+      <p class="timer">
+        Time:
+        <span id="timer">00:00</span>
+      </p>
     </div>
     <div class="cat">
     </div>

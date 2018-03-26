@@ -1,4 +1,7 @@
-function startGame() {
+
+
+function generateBoard() {
+  clearBoard();
   const fragment = document.createDocumentFragment();
   const backImages = generateBackArray();
 
@@ -15,7 +18,25 @@ function startGame() {
     card.appendChild(back);
     fragment.appendChild(card);
   }
-  document.getElementsByClassName('board')[0].appendChild(fragment);
+  board.appendChild(fragment);
+  board.addEventListener('click', function(evt) {
+    if (evt.target.classList.contains('front') && openedCards.length < 2) {
+      const card = evt.target.parentNode;
+      card.classList.toggle('clicked');
+      openedCards.push(card);
+      if (openedCards.length === 2) {
+        setTimeout(checkMatching, 500);
+      }
+    }
+  })
+
+}
+
+function clearBoard() {
+  const cards = board.childNodes;
+  for (let card of cards) {
+    board.removeChild(card);
+  }
 }
 
 function generateBackArray() {
@@ -68,16 +89,5 @@ const board = document.querySelector('.board');
 let openedCards = [];
 let matchings = 0;
 
-board.addEventListener('click', function(evt) {
-  if (evt.target.classList.contains('front') && openedCards.length < 2) {
-    const card = evt.target.parentNode;
-    card.classList.toggle('clicked');
-    openedCards.push(card);
-    if (openedCards.length === 2) {
-      setTimeout(checkMatching, 500);
-    }
-  }
 
-})
-
-startGame();
+generateBoard();
