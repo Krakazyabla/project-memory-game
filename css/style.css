@@ -64,10 +64,12 @@ body {
   width: 25%;
   padding: 5px;
   position: relative;
+  -webkit-perspective: 200px;
+  -moz-perspective: 200px;
+  perspective: 500px;
 }
 
-.card .front {
-  background: url(../img/front.svg) beige center no-repeat /contain;
+.card .front, .card .back {
   position: absolute;
   top: 5px;
   left: 5px;
@@ -75,10 +77,62 @@ body {
   right: 5px;
   border-radius: 5px;
   box-shadow: 0 0 5px black;
+  -webkit-transition: -webkit-transform .5s;
+  -moz-transition: -moz-transform .5s;
+  -o-transition: -o-transform .5s;
+  transition: transform .5s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  background: url(../img/front.svg) beige center no-repeat /contain;
 }
 
 .card .back {
-  display: none;
+  background: beige center no-repeat /cover;
+  border: 4px double black;
+}
+
+.card.clicked .front {
+  -webkit-transform: rotateY( 180deg );
+  -moz-transform: rotateY( 180deg );
+  -o-transform: rotateY( 180deg );
+  transform: rotateY( 180deg );
+}
+
+.card:not(.clicked) .back {
+  -webkit-transform: rotateY( -180deg );
+  -moz-transform: rotateY( -180deg );
+  -o-transform: rotateY( -180deg );
+  transform: rotateY(-180deg );
+}
+
+.card:not(.clicked) .front, .card.clicked .back {
+  -webkit-transform: none;
+  -moz-transform: none;
+  -o-transform: none;
+  transform: none;
+}
+
+.card:not(.clicked) .back {
+  -webkit-transform: rotateY( -180deg );
+  -moz-transform: rotateY( -180deg );
+  -o-transform: rotateY( -180deg );
+  transform: rotateY(-180deg );
+}
+
+.card.matched .back {
+  -webkit-transition: background-image .3s;
+  -moz-transition: background-image .3s;
+  -o-transition: background-image .3s;
+  transition: background-image .3s;
+  background-image: url(../img/match.svg) !important;
 }
 
 /************   Info & controls   **************/
