@@ -74,7 +74,7 @@ body {
   flex-wrap: wrap;
 }
 
-.invite-wrapper.hidden {
+.invite-wrapper.hidden, .modal-wrapper.hidden {
   display: none;
 }
 
@@ -178,11 +178,11 @@ body {
   margin-top: 40px;
 }
 
-.rating .fa-star {
+.fa-star {
   color: #ffe28c;
 }
 
-button#reset {
+button {
   font-size: 1em;
   padding: 10px;
   margin: 10px;
@@ -193,11 +193,11 @@ button#reset {
   font-family: 'Love Ya Like A Sister', cursive;
 }
 
-button#reset:hover {
+button:hover {
   box-shadow: 0 0 10px black;
 }
 
-button#reset:active {
+button:active {
   background: linear-gradient(beige, #d3d39a 30%, #d3d39a 70%, beige);
   border-style: inset;
 }
@@ -209,4 +209,51 @@ button#reset:active {
   width: 250px;
   height: 235px;
   background: url(../img/cat_3.png) no-repeat center /contain;
+}
+
+/************   Win modal    **************/
+
+.modal-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-window {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px white;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 20px;
+}
+
+.modal-info {
+  width: 75%;
+  padding: 10px;
+}
+
+.modal-info:first-child {
+  font-weight: bold;
+}
+
+#modal-cat {
+  width: 300px;
+  height: 200px;
+  background: center no-repeat /contain;
+}
+
+#modal-button {
+  width: 100px;
 }

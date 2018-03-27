@@ -70,9 +70,11 @@ function resetRating() {
 
 function decreaseRating() {
   if (rating > 0) {
-    let star = document.querySelector(`.rate${rating}`);
-    star.classList.add('far');
-    star.classList.remove('fas');
+    let stars = document.querySelectorAll(`.rate${rating}`);
+    for (star of stars) {
+      star.classList.add('far');
+      star.classList.remove('fas');
+    }
     cat.style.backgroundImage = `url(img/cat_${rating}.png)`
     rating--;
   }
@@ -148,13 +150,33 @@ function animateMatchingCards() {
 
 function winGame() {
   clearInterval(timer);
-  alert('yep!');
+  const modalMessages = ['Your cat is completely disappointed in you',
+                          '\"I\'m still hungry...\"',
+                          '\"I\'m full, so it\'s time to byte you!\"',
+                          'Your cat is fat and happy']
+  document.getElementById('modal-moves').innerText = movesCount;
+  document.getElementById('modal-time').innerText = `${minutes.innerText}:${seconds.innerText}`;
+  document.getElementById('modal-cat').style.backgroundImage = `url(img/cat_modal${rating + 1}.svg)`;
+  document.getElementById('modal-message').innerText = modalMessages[rating];
+  modal.classList.remove('hidden');
+
+}
+
+function returnToBeginning() {
+  modal.classList.add('hidden');
+  inviting.classList.remove('hidden');
+  generateBoard();
+  resetRating();
+  resetMoves();
+  resetTimer();
+  matchings = 0;
 }
 
 const board = document.querySelector('.board');
 const inviting = document.querySelector('.invite-wrapper');
 const moves = document.querySelector('#moves');
 const cat = document.querySelector('.cat');
+const modal = document.querySelector('.modal-wrapper');
 
 const minutes = document.querySelector('#timer-minutes');
 const seconds = document.querySelector('#timer-seconds');
@@ -182,3 +204,4 @@ board.addEventListener('click', function(evt) {
 })
 
 document.getElementById('reset').addEventListener('click', startGame);
+document.getElementById('modal-button').addEventListener('click', returnToBeginning);
