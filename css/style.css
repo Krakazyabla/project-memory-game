@@ -74,6 +74,10 @@ body {
   flex-wrap: wrap;
 }
 
+.invite-wrapper.hidden {
+  display: none;
+}
+
 .invite-message {
   width: 75%;
   padding: 10px;
@@ -191,6 +195,11 @@ button#reset {
 
 button#reset:hover {
   box-shadow: 0 0 10px black;
+}
+
+button#reset:active {
+  background: linear-gradient(beige, #d3d39a 30%, #d3d39a 70%, beige);
+  border-style: inset;
 }
 
 .cat {
