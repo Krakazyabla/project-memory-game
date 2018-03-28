@@ -1,10 +1,7 @@
-
-
 function generateBoard() {
   clearBoard();
   const fragment = document.createDocumentFragment();
   const backImages = generateBackArray();
-
   for (let i = 0; i < 16; i++) {
     const card = document.createElement('div');
     card.className = 'card';
@@ -29,6 +26,7 @@ function clearBoard() {
 }
 
 function generateBackArray() {
+  //generates array with random numbers, each corresponds to certain image
   const helpArr = [0, 0, 0, 0, 0, 0, 0, 0];
   const backArr = [];
   for (let i = 0; i < 16; i++) {
@@ -72,6 +70,7 @@ function decreaseRating() {
   if (rating > 0) {
     let stars = document.querySelectorAll(`.rate${rating}`);
     for (star of stars) {
+      // change solid star to regular star from font awesome set
       star.classList.add('far');
       star.classList.remove('fas');
     }
@@ -120,6 +119,7 @@ function checkRating() {
     decreaseRating();
   }
   if (movesCount < 16 && matchings > 3) {
+    // if condition above is satisfied, cat at screen becomes very fat
     cat.style.backgroundImage = `url(img/cat_4.png)`;
   }
 }
