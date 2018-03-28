@@ -28,6 +28,7 @@ function clearBoard() {
   }
 }
 
+// Create array with random numbers each of that corresponds to certain image
 function generateBackArray() {
   const helpArr = [0, 0, 0, 0, 0, 0, 0, 0];
   const backArr = [];
@@ -72,6 +73,7 @@ function decreaseRating() {
   if (rating > 0) {
     let stars = document.querySelectorAll(`.rate${rating}`);
     for (star of stars) {
+      //switch between solid stars('fas') and 'regular' ('far') from font-awesome set
       star.classList.add('far');
       star.classList.remove('fas');
     }
@@ -120,6 +122,7 @@ function checkRating() {
     decreaseRating();
   }
   if (movesCount < 16 && matchings > 3) {
+    // if above condition is satisfied, cat becomes very fat)
     cat.style.backgroundImage = `url(img/cat_4.png)`;
   }
 }
