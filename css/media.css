@@ -1,0 +1,101 @@
+@media screen and (max-width: 930px) {
+  .info {
+    margin-left: 20px;
+    font-size: 1.5em;
+  }
+
+  .cat {
+    width: 200px;
+    height: 188px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    background-image: url(../img/background_w750.jpg);
+  }
+
+  .container {
+    display: block;
+    min-width: 90%;
+  }
+
+  .board-wrapper {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+
+  .info {
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-flow: column;
+  }
+
+  .reset {
+    order: 4;
+  }
+
+  .cat {
+    opacity: 0.5;
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .heading {
+    font-size: 3em;
+  }
+
+  .invite-message {
+    font-size: 1.5em;
+  }
+
+  .cat {
+    opacity: 0.3;
+    width: 140px;
+    height: 130px;
+  }
+
+  .rating {
+    margin-top: 20px;
+  }
+
+  heading {
+    font-size: 2em;
+  }
+
+  .modal-window {
+    width: 80%;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 2em;
+  }
+
+  .reminder {
+    display: none;
+  }
+
+  .invite-message {
+    font-size: 1em;
+  }
+
+  .info {
+    font-size: 1em;
+  }
+
+  .rating, .moves, .timer {
+    margin: 10px 10px;
+  }
+}

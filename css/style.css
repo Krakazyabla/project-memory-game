@@ -11,12 +11,16 @@ button:focus {
   outline: none !important;
 }
 
+
 /************   Common styles   **************/
 
 body {
   height: 100%;
-  background: url(../img/background_w1920.jpg) no-repeat center /cover;
+  background: url(../img/background_w1920.jpg) center /cover no-repeat fixed;
   font-family: 'Love Ya Like A Sister', cursive;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 
 .container {
@@ -39,6 +43,31 @@ body {
   margin: 10px;
   align-self: center;
 }
+
+.fa-star {
+  color: #ffe28c;
+}
+
+button {
+  font-size: 1em;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  border-radius: 7px;
+  background: linear-gradient(beige, #e8e8b9);
+  border: 1px solid #e8e8b9;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+button:hover {
+  box-shadow: 0 0 10px black;
+}
+
+button:active {
+  background: linear-gradient(beige, #d3d39a 30%, #d3d39a 70%, beige);
+  border-style: inset;
+}
+
 
 /************   Board   **************/
 
@@ -72,10 +101,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-}
-
-.invite-wrapper.hidden, .modal-wrapper.hidden {
-  display: none;
 }
 
 .invite-message {
@@ -162,6 +187,7 @@ body {
   background-image: url(../img/match.svg) !important;
 }
 
+
 /************   Info & controls   **************/
 
 .info {
@@ -178,38 +204,15 @@ body {
   margin-top: 40px;
 }
 
-.fa-star {
-  color: #ffe28c;
-}
-
-button {
-  font-size: 1em;
-  padding: 10px;
-  margin: 10px;
-  font-weight: bold;
-  border-radius: 7px;
-  background: linear-gradient(beige, #e8e8b9);
-  border: 1px solid #e8e8b9;
-  font-family: 'Love Ya Like A Sister', cursive;
-}
-
-button:hover {
-  box-shadow: 0 0 10px black;
-}
-
-button:active {
-  background: linear-gradient(beige, #d3d39a 30%, #d3d39a 70%, beige);
-  border-style: inset;
-}
-
 .cat {
-  position: absolute;
+  /* position: absolute;
   right: 40px;
-  bottom: 20px;
+  bottom: 20px; */
   width: 250px;
   height: 235px;
   background: url(../img/cat_3.png) no-repeat center /contain;
 }
+
 
 /************   Win modal    **************/
 
@@ -238,6 +241,11 @@ button:active {
   text-align: center;
   padding: 20px;
 }
+
+.modal-wrapper.hidden, .invite-wrapper.hidden {
+  display: none;
+}
+
 
 .modal-info {
   width: 75%;
