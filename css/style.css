@@ -7,6 +7,7 @@
  line-height: 1.2em;
 }
 
+/* hide blue border around buttons */
 button:focus {
   outline: none !important;
 }
@@ -205,9 +206,6 @@ button:active {
 }
 
 .cat {
-  /* position: absolute;
-  right: 40px;
-  bottom: 20px; */
   width: 250px;
   height: 235px;
   background: url(../img/cat_3.png) no-repeat center /contain;

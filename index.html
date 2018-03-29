@@ -15,6 +15,8 @@
     <h1 class="heading">Memory game</h1>
     <h3 class="reminder">(don't forget to feed the cat!)</h3>
     <div class="board-wrapper">
+
+      <!-- div that covers board at the beginning and display invite message -->
       <div class="invite-wrapper">
         <p class="invite-message">
           Find matching cards and feed your cat as soon as possible!
@@ -22,8 +24,8 @@
         <p class="invite-message">
           Press New game to begin
         </p>
-
       </div>
+
       <div class="board"></div>
     </div>
     <div class="info">
@@ -47,8 +49,9 @@
       <div class="cat">
       </div>
     </div>
-
   </div>
+
+  <!-- modal window, that shows after ending of the game -->
   <div class="modal-wrapper hidden">
     <div class="modal-window">
       <p class="modal-info">
@@ -71,6 +74,7 @@
       <button id="modal-button">OK</button>
     </div>
   </div>
+  
   <script src="js/script.js"></script>
 </body>
 </html>
